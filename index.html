@@ -88,11 +88,11 @@
 
         /* 兴趣爱好部分 */
         .interests {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-        }
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 三列布局 */
+        gap: 20px; /* 控制项目之间的间距 */
+        margin-top: 40px
+        }       
 
         .interests .interest-item {
             flex: 1;
@@ -103,6 +103,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            
         }
 
         .interests .interest-item:hover {
@@ -169,17 +170,17 @@
         }
 
         .progress.css {
-            width: 90%;
+            width: 70%;
             background-color: #2196F3; /* 蓝色 */
         }
 
         .progress.javascript {
-            width: 35%;
+            width: 25%;
             background-color: #FFC107; /* 黄色 */
         }
 
         .progress.photography {
-            width: 70%;
+            width: 60%;
             background-color: #FF5722; /* 橙色 */
         }
 
@@ -196,10 +197,11 @@
         }
 
         .portfolio-items {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+           gap: 20px; 
         }
+
 
         .portfolio-item {
             flex: 1;
@@ -296,6 +298,10 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .interests, .portfolio-items {
+                grid-template-columns: 1fr
+            }
 
             .interests .interest-item, .portfolio-item {
                 max-width: 100%;
@@ -353,7 +359,8 @@ form button:hover {
         <!-- 个人简介 -->
         <section class="about fade-in">
             <h2>关于我</h2>
-            <p>我是一个前端开发工程师，也是丑照摄影师。我喜欢通过代码创造自己需要的网站，也乐于通过镜头捕捉有趣的回忆。
+            <p>我是一个随心所欲，追求效率之学生。喜宅于家，属于上知天文下肢瘫痪的类型。</p>
+            <p>臆想着某天可以自给自足（网页、应用、电器）</p>
         </section>
 
         <!-- 兴趣爱好 -->
@@ -368,7 +375,15 @@ form button:hover {
             </div>
             <div class="interest-item">
                 <h3>摄影</h3>
-                <p>主修抓拍、尤其是抓拍丑照</p>
+                <p>主玩抓拍、尤其是抓拍丑照</p>
+            </div>
+            <div class="interest-item">
+                <h3>信息汇整</h3>
+                <p>做一些数据分析，研究</p>
+            </div>
+            <div class="interest-item">
+                <h3>晶体养殖</h3>
+                <p>培养各种晶系的晶体</p>
             </div>
         </section>
 
@@ -378,7 +393,7 @@ form button:hover {
                 <div class="skill">
                     <h3>摄影</h3>
                     <div class="skill-bar">
-                        <div class="progress photography">70%</div>
+                        <div class="progress photography">60%</div>
                     </div>
                 </div>
                 <div class="skill">
@@ -389,13 +404,13 @@ form button:hover {
                 <div class="skill">
                     <h3>CSS</h3>
                     <div class="skill-bar">
-                        <div class="progress css">90%</div>
+                        <div class="progress css">70%</div>
                     </div>
                     </div>
                 <div class="skill">
                     <h3>JavaScript</h3>
                     <div class="skill-bar">
-                        <div class="progress javascript">35%</div>
+                        <div class="progress javascript">25%</div>
                     </div>
                     </div>
             </section>
@@ -406,25 +421,37 @@ form button:hover {
             <div class="portfolio-items">
             <div class="portfolio-item">
             <a href="https://kunweb04.github.io/introduce/index.html" target="_blank">项目一：个人介绍网站</a>
-            <p>展示我一部分技能与经历的一个平台。</p>
+            <p>我的第一个网页</p>
+            <p>放置了我的一部分讯息</p>
             </div>
             <div class="portfolio-item">
             <a href="https://kunweb04.github.io/music/index.html" target="_blank">项目二：音乐播放器</a>
             <p>一个简洁的音乐播放工具。</p>
+            <p>歌曲含200余首，持续更新中</p>
             </div>
             <div class="portfolio-item">
             <a href="https://kunweb04.github.io/test/" target="_blank">项目三：SASS预编译器应用</a>
-            <p>使用SASS增强样式的示例项目。</p>
+            <p>初次使用预编译器SASS的示例项目。</p>
+            <p>一个太空主题的动态背景</p>
             </div>
             <div class="portfolio-item">
             <a href="https://kunweb04.github.io/test/game1/game1.html" target="_blank">项目四：游戏集</a>
-            <p>游戏1：<a href="https://kunweb04.github.io/test/game1/game1.html" target="_blank">Game 1</a>，</p>
-            <p>游戏2：<a href="https://kunweb04.github.io/test/game2/" target="_blank">Game 2</a>，</p>
-            <p>游戏3：<a href="https://kunweb04.github.io/test/game3/index.html" target="_blank">Game 3</a>。</p>
+            <p>无聊时制作的小游戏</p>
+            <p>
+            游戏1：<a href="https://kunweb04.github.io/test/game1/game1.html" target="_blank">问答挑战</a>，
+            游戏2：<a href="https://kunweb04.github.io/test/game2/" target="_blank">反应测试</a>，
+            游戏3：<a href="https://kunweb04.github.io/test/game3/index.html" target="_blank">数字猜谜</a>。
+            </p>
             </div>
             <div class="portfolio-item">
             <a href="https://kunweb04.github.io/work/workcrystal/" target="_blank">项目五：晶体化学作品</a>
-            <p>研究晶体结构与化学性质的项目。</p>
+            <p>研究各种物质混晶的项目作品图</p>
+            <p>更新较缓</p>
+            </div>
+            <div class="portfolio-item">
+            <a href="https://kunweb04.github.io/Website/" target="_blank">项目六：网页工作室</a>
+            <p>帮助有需要的人制作自己的网页</p>
+            <p>价格实惠</p>
             </div>
             </div>
         </section>

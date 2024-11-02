@@ -7,12 +7,17 @@
     <link rel="icon" href="kunlogo.png" type="image/png">
     <title>个人简介</title>
     <style>
-        /* 全局样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
+        }
+
+        html, body {
+            overflow-y: scroll;
+            height: 100%;
+            overflow: hidden; 
         }
 
         body {
@@ -37,9 +42,16 @@
         }
 
         .container {
+            overflow-y: auto; 
+            height: 100vh;
+            scrollbar-width: none; /* Firefox */
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+        }
+
+        .container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
         }
 
         /* 浅色主题 */
@@ -72,7 +84,6 @@
             --footer-bg2: #007991;
         }
 
-        /* 应用主题变量 */
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -195,22 +206,22 @@
         }
         .progress.html {
             width: 80%;
-            background-color: #4CAF50; /* 绿色 */
+            background-color: #4CAF50; 
         }
 
         .progress.css {
             width: 70%;
-            background-color: #2196F3; /* 蓝色 */
+            background-color: #2196F3; 
         }
 
         .progress.javascript {
             width: 25%;
-            background-color: #FFC107; /* 黄色 */
+            background-color: #FFC107; 
         }
 
         .progress.photography {
             width: 60%;
-            background-color: #FF5722; /* 橙色 */
+            background-color: #FF5722; 
         }
 
         .portfolio {
@@ -302,10 +313,9 @@
         }
 
         footer .social-links a:hover {
-            color: #ffcc00; /* 明亮的黄色 */
+            color: #ffcc00; 
         }
 
-        /* 主题切换按钮样式 */
         .theme-switch {
             font-weight: bold;
             position: fixed;
@@ -322,44 +332,44 @@
         }
 
         form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: var(--portfolio-bg);
-    color: var(--title-color);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: var(--portfolio-bg);
+            color: var(--title-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
+        form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-form input, form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid var(--portfolio-hover-bg);
-    border-radius: 5px;
-}
+        form input, form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid var(--portfolio-hover-bg);
+            border-radius: 5px;
+        }   
 
-form button {
-    padding: 10px;
-    background-color: #003366; /* 深蓝色 */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
+        form button {
+            padding: 10px;
+            background-color: #003366; /* 深蓝色 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
 
-form button:hover {
-    background-color: #005580; /* 深蓝色变暗 */
-}
+        form button:hover {
+            background-color: #005580; /* 深蓝色变暗 */
+        }
 
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
             .interests, .portfolio-items {
                 flex-direction: column;
                 align-items: center;

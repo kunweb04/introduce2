@@ -76,6 +76,12 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
+            scrollbar-width: none;
+            overflow-y: scroll;
+        }
+        
+        body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari 和 Opera */
         }
 
         .header {
